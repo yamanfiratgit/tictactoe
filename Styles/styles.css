@@ -1,0 +1,308 @@
+:root {
+  background-image: linear-gradient(90deg, #7b4397, #dc2430, #f1b753);
+}
+body {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+header {
+  margin-top: 2vw;
+}
+h1 {
+  margin-bottom: 2vw;
+
+  animation: color-change 1s infinite;
+  -webkit-animation: color-change 4s infinite;
+}
+#h1-div {
+  position: relative;
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+@keyframes color-change {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(201, 201, 255);
+  }
+  100% {
+    color: white;
+  }
+}
+@-webkit-keyframes color-change {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(201, 201, 255);
+  }
+  100% {
+    color: white;
+  }
+}
+#h1-div span {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  animation: waviy 2s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+#header-p {
+  margin-top: 3vw;
+  color: white;
+  word-spacing: 1.5rem;
+}
+#player-setting {
+  display: flex;
+  justify-content: center;
+}
+#config-ordered-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+.player-config {
+  padding: 1vw 6vw;
+  margin: 3vw;
+  background-color: rgb(255 255 255 / 50%);
+  border-radius: 2rem 6rem 8rem 16rem;
+  display: grid;
+  grid-template-columns: auto;
+  box-sizing: border-box;
+}
+#player-2-data > div {
+  border-radius: 6rem 2rem 16rem 8rem;
+}
+.name-tag {
+  margin-top: 0;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+.player-name {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: purple;
+  min-height: 29.6px;
+  min-width: 171px;
+}
+.x-o {
+  margin: 1vw auto;
+  font-size: 2vw;
+  font-weight: bold;
+}
+.buttons {
+  box-sizing: border-box;
+  padding: auto;
+  width: fit-content;
+  margin: auto;
+  color: purple;
+  transition: 0.5s ease-out;
+  background-color: transparent;
+  border: none;
+}
+.buttons:hover {
+  cursor: pointer;
+  background-color: #d086f5;
+  transform: scale(1.2);
+  border-radius: 0.2rem;
+  box-shadow: 0px 0px 2px 1px rgba(62, 61, 61, 0.6);
+}
+.button-style {
+  color: white;
+  font-size: 1.5rem;
+  box-sizing: content-box;
+  transition: 0.5s ease-out;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(to right, #00b09b, #96c93d);
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 5px 12px 4px rgb(0 0 0 / 40%);
+}
+.button-style:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background-image: linear-gradient(to right, #008f7e, #88b637);
+}
+#modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#config-overlay {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  overflow: auto;
+  z-index: 2;
+  margin: auto;
+  padding: 1rem 5rem;
+  border-radius: 1rem;
+}
+#config-overlay h2 {
+  font-size: 1.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+#config-overlay > form > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#playername {
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  border-radius: 0.5rem;
+  border: solid purple;
+  width: 50%;
+}
+#config-overlay > form > div:nth-child(2) {
+  margin: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 10px;
+  justify-content: center;
+}
+.error label {
+  color: rgb(136, 2, 2);
+}
+.error input {
+  border-color: rgb(136, 2, 2);
+  color: rgb(136, 2, 2);
+  background-color: rgb(253, 219, 219);
+}
+.player-config-buttons {
+  padding: 0.5rem 1rem;
+}
+#config-overlay > form > div:nth-child(2) > button:nth-child(1) {
+  cursor: pointer;
+  color: purple;
+  background: none;
+  border: solid purple;
+  border-radius: 0.5rem;
+}
+#config-overlay > form > div:nth-child(2) > button:nth-child(2) {
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #aa2aea;
+}
+#config-overlay > form > div:nth-child(2) > button:nth-child(2):hover {
+  background-color: #991fd5;
+}
+#active-game {
+  display: none;
+}
+#game-board {
+  list-style: none;
+  display: grid;
+  margin: 1vw 0;
+  padding: 0;
+  grid-template-columns: repeat(3, 6rem);
+  grid-template-rows: repeat(3, 6rem);
+  justify-content: center;
+  gap: 0.5vw;
+}
+#game-over {
+  padding-top: 2rem;
+}
+#end-game-overlay {
+  width: 60%;
+  max-width: 40rem;
+  margin: auto;
+  padding: 1rem 2rem;
+  background-color: rgb(177, 90, 244);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  display: none;
+  flex-direction: column;
+}
+
+#active-game > article > div > ol li {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: #ced1ee;
+}
+#active-game > article > div > ol li:hover {
+  background: radial-gradient(#e66465, #9198e5);
+}
+#active-game > article > div > ol li.disabled {
+  background: radial-gradient(#e66465, #9198e5);
+  cursor: default;
+}
+
+@media screen and (max-width: 920px) {
+  .x-o {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #game-board {
+    grid-template-columns: repeat(3, 24vw);
+    grid-template-rows: repeat(3, 24vw);
+  }
+  #active-game > article > div > ol li {
+    font-size: 16vw;
+  }
+
+  .button-style {
+    font-size: 3.5vw;
+  }
+  h1,
+  h1 span {
+    font-size: 1.5rem;
+  }
+}
+/* @media screen and (max-width: 586px) {
+  .player-name {
+    min-height: 59px;
+  }
+} */
+
+@media screen and (max-width: 542px) {
+  #player-setting {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 382px) {
+  #player-setting {
+    transform: scale(0.6);
+  }
+}
+@media screen and (max-width: 360px) {
+  #config-overlay > form > div:nth-child(2) {
+    grid-auto-flow: row;
+  }
+}
+@media screen and (max-width: 260px) {
+  #player-setting {
+    transform: scale(0.5);
+  }
+}
